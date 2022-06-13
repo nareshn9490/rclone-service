@@ -7,8 +7,9 @@ Environment=RCLONE_CONFIG=/opt/rclone/rclone.conf
 KillMode=none
 RestartSec=5
 ExecStart=/usr/bin/rclone mount drive: /path/to/folder \
+	--config=/path/to/conf \
         --allow-other \
-		    --vfs-cache-mode=full \
+	--vfs-cache-mode=full \
         --vfs-read-chunk-size=16M \
         --vfs-read-chunk-size-limit=2G \
         --vfs-cache-poll-interval 30m \
