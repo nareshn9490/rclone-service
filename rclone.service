@@ -11,9 +11,9 @@ ExecStart=/usr/bin/rclone mount drive: /path/to/folder \
 	--vfs-cache-mode=full \
         --vfs-read-chunk-size=16M \
         --vfs-read-chunk-size-limit=2G \
-        --vfs-cache-poll-interval 30m \
-        --vfs-cache-max-size 20G \
-        --vfs-cache-max-age 1h \
+        --vfs-cache-poll-interval=30m \
+        --vfs-cache-max-size=20G \
+        --vfs-cache-max-age=1h \
         --buffer-size=32M \
         --max-read-ahead=64M \
         --poll-interval=1m \
