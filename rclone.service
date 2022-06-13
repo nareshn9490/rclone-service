@@ -1,0 +1,29 @@
+[Unit]
+Description=RClone Service
+
+[Service]
+Type=notify
+Environment=RCLONE_CONFIG=/opt/rclone/rclone.conf
+KillMode=none
+RestartSec=5
+ExecStart=/usr/bin/rclone mount drive: /path/to/folder \
+        --allow-other \
+		    --vfs-cache-mode=full \
+        --vfs-read-chunk-size=16M \
+        --vfs-read-chunk-size-limit=2G \
+        --vfs-cache-poll-interval 30m \
+        --vfs-cache-max-size 20G \
+        --vfs-cache-max-age 1h \
+        --buffer-size=32M \
+        --max-read-ahead=64M \
+        --poll-interval=1m \
+        --dir-cache-time=1h \
+        --checkers=8 \
+        --transfers=8 \
+        --dir-cache-time=60m \
+        --cache-info-age=60m \
+        --cache-dir= /path/to/cache \
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
