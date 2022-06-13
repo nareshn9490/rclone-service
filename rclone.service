@@ -3,7 +3,6 @@ Description=rclone service
 
 [Service]
 Type=notify
-Environment=RCLONE_CONFIG=/opt/rclone/rclone.conf
 KillMode=none
 RestartSec=5
 ExecStart=/usr/bin/rclone mount drive: /path/to/folder \
